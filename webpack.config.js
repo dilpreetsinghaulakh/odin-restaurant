@@ -36,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Webpack Tailwind Template",
+      title: "Restaurant Page",
       filename: "index.html",
       template: "./src/template.html",
     }),

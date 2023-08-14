@@ -1,3 +1,3 @@
-# Webpack Tailwind Template
+# Odin Restaurant
 
-This is a simple Webpack template which have tailwind css installed.
+This is a simple Webpack based restaurant page form The Odin Project.
