@@ -1,10 +1,14 @@
 module.exports = {
-  content: ['./dist/*.html'],
+  mode: "jit",
+  darkMode: "media",
+  content: [
+    './**/*.html',
+    './**/*.js',],
   theme: {
     extend: {},
   },
   variants: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require("tailwindcss")],
+};
