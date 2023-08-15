@@ -5,6 +5,10 @@ module.exports = {
     './**/*.html',
     './**/*.js',],
   theme: {
+    fontFamily: {
+      sans: ['Open Sans', 'sans-serif'],
+      serif: ['Philosopher', 'serif'],
+    },
     extend: {},
   },
   variants: {
