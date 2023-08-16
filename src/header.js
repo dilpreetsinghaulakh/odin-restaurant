@@ -23,14 +23,29 @@ function Header() {
   </clipPath>
   </defs>
   </svg> 
-`
+`;
 
-  logoDiv.addEventListener('click', () => {
+  logoDiv.addEventListener("click", () => {
     // Will return back to home
-    console.log("Logo is clicked")
-  })
+    console.log("Logo is clicked");
+  });
 
-  headerContent.appendChild(logoDiv);
+  const links = document.createElement("div");
+  links.className = "flex gap-4"
+
+  const linksArray = ["Home", "Menu", "Contact"];
+
+  for (let i = 0; i < linksArray.length; i++) {
+    const link = document.createElement("a");
+    link.textContent = linksArray[i];
+    link.addEventListener("click", ()=>{
+      console.log(linksArray[i].toLowerCase())
+    })
+    link.className = "cursor-pointer font-semibold"
+    links.appendChild(link);
+  }
+
+  headerContent.append(logoDiv, links);
 
   header.appendChild(headerContent);
   return header;

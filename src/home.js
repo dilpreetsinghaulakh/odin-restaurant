@@ -31,17 +31,13 @@ function Home() {
   heroRight.className = "flex flex-col justify-center items-center";
 
   const heroImgContainer = document.createElement("div");
-  heroImgContainer.className = "z-10 aspect-square max-h-full";
+  heroImgContainer.className = "aspect-square max-h-full";
 
   const heroImg = new Image();
   heroImg.src = heroImage;
   heroImg.className = " filter drop-shadow-xl-dark";
 
   heroImgContainer.append(heroImg);
-
-  // const heroImgAfter = document.createElement("div");
-  // heroImgAfter.className =
-  //   "h-[30vw] w-[35vw] right-0 mt-[15%] absolute bg-blue-400 rounded-l-full";
 
   heroRight.append(heroImgContainer);
 
