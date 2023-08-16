@@ -1,3 +1,4 @@
+import Contact from "./contact";
 import Home from "./home";
 import Menu from "./menu";
 
@@ -57,7 +58,7 @@ function Header() {
 
       if (link.id === "home") content.append(Home());
       else if (link.id === "menu") content.append(Menu());
-      else content.append();
+      else content.append(Contact());
     });
     link.className = "cursor-pointer font-semibold";
     links.appendChild(link);
