@@ -4,7 +4,8 @@ import Menu from "./menu";
 function Home() {
   const homePage = document.createElement("div");
   const heroSection = document.createElement("div");
-  heroSection.className = "flex gap-8 h-[80vh] flex-col mt-8 md:mt-0 md:flex-row";
+  heroSection.className =
+    "flex gap-8 h-[80vh] flex-col mt-8 md:mt-0 md:flex-row";
 
   const heroLeft = document.createElement("div");
 
@@ -15,19 +16,26 @@ function Home() {
   const heroParagraph = document.createElement("p");
   heroParagraph.textContent =
     "The Tastiest & Best Pizza In The World. Have the real uniquely crafted experience.";
-  heroParagraph.className = "text-lg"
+  heroParagraph.className = "text-lg";
 
   const heroBtn = document.createElement("button");
   heroBtn.textContent = "View Menu";
   heroBtn.onclick = () => {
     const content = document.getElementById("content");
-    content.innerHTML = ""
-    content.append(Menu())
+    content.innerHTML = "";
+    content.append(Menu());
+
+    const pastActive = document.querySelector(".page-active");
+    pastActive.classList.remove("page-active");
+
+    const menuLink = document.getElementById("menu");
+    menuLink.classList.add("page-active");
   };
   heroBtn.className =
     "w-fit bg-orange-500 text-white px-16 py-4 rounded-full font-bold shadow-xl shadow-orange-500/40 dark:shadow-orange-500/30";
 
-  heroLeft.className = "flex flex-col justify-center gap-8 items-center md:items-start md:w-1/2";
+  heroLeft.className =
+    "flex flex-col justify-center gap-8 items-center md:items-start md:w-1/2";
   heroLeft.append(heroHeading, heroParagraph, heroBtn);
 
   const heroRight = document.createElement("div");

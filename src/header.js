@@ -4,12 +4,11 @@ import Menu from "./menu";
 function Header() {
   const content = document.getElementById("content");
   const header = document.createElement("header");
-  header.className =
-    "flex justify-center sticky top-0 z-5 w-full bg-slate-200/25 border-b border-slate-900/10 backdrop-blur-md dark:bg-slate-950/10 dark:border-slate-50/[0.06] dark:text-white";
+  header.className = "flex justify-center sticky top-[1rem] z-5";
 
   const headerContent = document.createElement("div");
   headerContent.className =
-    "px-4 w-full max-w-5xl h-16 flex justify-between items-center";
+    "px-6 mx-4 w-full max-w-5xl h-16 flex justify-between items-center bg-slate-200/25 border border-slate-900/10 backdrop-blur-md dark:bg-slate-950/10 dark:border-slate-50/[0.06] dark:text-white rounded-xl";
 
   const logoDiv = document.createElement("div");
 
@@ -32,6 +31,12 @@ function Header() {
   logoDiv.addEventListener("click", () => {
     content.innerHTML = "";
     content.append(Home());
+
+    const pastActive = document.querySelector(".page-active");
+    pastActive.classList.remove("page-active");
+
+    const homeLink = document.getElementById("home");
+    homeLink.classList.add("page-active");
   });
 
   const links = document.createElement("div");
@@ -42,11 +47,16 @@ function Header() {
   for (let i = 0; i < linksArray.length; i++) {
     const link = document.createElement("a");
     link.textContent = linksArray[i];
+    link.id = linksArray[i].toLowerCase();
     link.addEventListener("click", () => {
+      const pastActive = document.querySelector(".page-active");
+      pastActive.classList.remove("page-active");
+      link.classList.add("page-active");
+
       content.innerHTML = "";
 
-      if (linksArray[i] === "Home") content.append(Home());
-      else if (linksArray[i] === "Menu") content.append(Menu());
+      if (link.id === "home") content.append(Home());
+      else if (link.id === "menu") content.append(Menu());
       else content.append();
     });
     link.className = "cursor-pointer font-semibold";
