@@ -32,6 +32,7 @@ function Header() {
   logoDiv.addEventListener("click", () => {
     content.innerHTML = "";
     content.append(Home());
+    window.scrollTo(0,0)
 
     const pastActive = document.querySelector(".page-active");
     pastActive.classList.remove("page-active");
@@ -56,9 +57,9 @@ function Header() {
 
       content.innerHTML = "";
 
-      if (link.id === "home") content.append(Home());
-      else if (link.id === "menu") content.append(Menu());
-      else content.append(Contact());
+      if (link.id === "home") content.append(Home()), window.scrollTo(0,0);
+      else if (link.id === "menu") content.append(Menu()), window.scrollTo(0,0);
+      else content.append(Contact()), window.scrollTo(0,0);
     });
     link.className = "cursor-pointer font-semibold";
     links.appendChild(link);

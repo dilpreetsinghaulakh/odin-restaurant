@@ -5,7 +5,7 @@ function Home() {
   const homePage = document.createElement("div");
   const heroSection = document.createElement("div");
   heroSection.className =
-    "flex gap-8 h-[80vh] flex-col mt-8 md:mt-0 md:flex-row";
+    "flex gap-8 md:h-[80vh] flex-col mt-8 md:mt-0 md:flex-row";
 
   const heroLeft = document.createElement("div");
 
@@ -24,6 +24,7 @@ function Home() {
     const content = document.getElementById("content");
     content.innerHTML = "";
     content.append(Menu());
+    window.scrollTo(0,0)
 
     const pastActive = document.querySelector(".page-active");
     pastActive.classList.remove("page-active");
