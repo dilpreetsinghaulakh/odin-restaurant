@@ -1,4 +1,5 @@
 import heroImage from "./assets/top-view-pizza-home.png";
+import Menu from "./menu";
 
 function Home() {
   const homePage = document.createElement("div");
@@ -19,7 +20,9 @@ function Home() {
   const heroBtn = document.createElement("button");
   heroBtn.textContent = "View Menu";
   heroBtn.onclick = () => {
-    console.log("Hero button clicked");
+    const content = document.getElementById("content");
+    content.innerHTML = ""
+    content.append(Menu())
   };
   heroBtn.className =
     "w-fit bg-orange-500 text-white px-16 py-4 rounded-full font-bold shadow-xl shadow-orange-500/40 dark:shadow-orange-500/30";

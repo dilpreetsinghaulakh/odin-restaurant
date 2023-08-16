@@ -4,7 +4,7 @@ function Menu() {
   const makePizzaList = (array) => {
     const pizzaList = document.createElement("div");
     pizzaList.className =
-      "bg-slate-100 dark:bg-slate-900 rounded-xl p-6 flex flex-col gap-6";
+      "shadow-sm bg-slate-100 dark:bg-slate-900 rounded-xl p-6 flex flex-col gap-6";
     for (let i = 0; i < array.length; i++) {
       const item = document.createElement("span");
       const name = document.createElement("p");
